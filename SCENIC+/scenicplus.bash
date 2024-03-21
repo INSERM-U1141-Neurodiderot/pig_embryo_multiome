@@ -7,6 +7,6 @@
 module purge
 
 source /home/adufour/.bashrc
-source activate scenicplus2
+source activate scenicplus
 
-python /home/adufour/save/scripts/scenicplus/omicscenic_embryos.py
+python /home/adufour/save/scripts/scenicplus/omicscenic.py

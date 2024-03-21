@@ -88,7 +88,6 @@ cell_data.index = cell_data['barcode'] + '-' + cell_data['sample_id'].astype(str
 pickle.dump(cistopic_obj, open(os.path.join(work_dir, 'scATAC/cistopic_obj.pkl'), 'wb'))
 
 cistopic_obj.add_cell_data(cell_data, split_pattern='-')
-print(cistopic_obj)
 
 models = run_cgs_models(cistopic_obj,
                         n_topics=[16,32],

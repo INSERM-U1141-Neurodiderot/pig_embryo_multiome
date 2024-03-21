@@ -10,13 +10,11 @@ library(gprofiler2)
 
 load(file = "/home/adufour/work/rds_storage/omics/archr_all_v6.RData")
 
-archrproj <- archrproj_sub
-
 reference <- readRDS("/home/adufour/work/rds_storage/gastrulation/embryo_E5_E15_arc108.rds")
 
 # add gene integration matrix
 archrproj2 <- addGeneIntegrationMatrix(
-    ArchRProj       = archrproj, 
+    ArchRProj       = archrproj_sub, 
     useMatrix       = "GeneExpressionMatrix",
     matrixName      = "GeneIntegrationMatrix",
     reducedDims     = "Harmony",
