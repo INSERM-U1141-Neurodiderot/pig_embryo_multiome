@@ -9,7 +9,6 @@ geneAnnotation <- readRDS("/home/adufour/work/rds_storage/omics/geneannotation.r
 addArchRThreads(5)
 addArchRLocking(locking = TRUE)
 
-#excludeChr = c("MT","AEMK02000265.1", "AEMK02000374.1", "AEMK02000375.1", "AEMK02000388.1", "AEMK02000418.1", "AEMK02000442.1", "AEMK02000628.1", "AEMK02000629.1", "AEMK02000634.1", "AEMK02000643.1", "AEMK02000673.1", "AEMK02000676.1", "AEMK02000704.1", "AEMK02000316.1", "AEMK02000473.1", "AEMK02000681.1", "AEMK02000237.1", "AEMK02000531.1", "AEMK02000319.1")
 excludeChr = c("AEMK02000442.1", "AEMK02000468.1", "AEMK02000631.1", "AEMK02000312.1", "AEMK02000634.1", "AEMK02000418.1", "AEMK02000704.1", "AEMK02000265.1", "AEMK02000673.1", "AEMK02000570.1", "AEMK02000388.1", "AEMK02000628.1", "AEMK02000643.1", "AEMK02000374.1", "AEMK02000676.1", "AEMK02000629.1", "AEMK02000375.1", "AEMK02000551.1", "AEMK02000500.1", "AEMK02000459.1", "AEMK02000582.1", "AEMK02000473.1", "AEMK02000316.1", "AEMK02000555.1", "AEMK02000681.1", "AEMK02000567.1", "AEMK02000237.1", "AEMK02000155.1", "AEMK02000531.1", "AEMK02000491.1", "AEMK02000351.1", "AEMK02000356.1", "AEMK02000319.1", "AEMK02000544.1", "AEMK02000615.1", "AEMK02000346.1", "AEMK02000383.1", "AEMK02000278.1", "AEMK02000621.1", "AEMK02000634.1", "AEMK02000555.1", "AEMK02000418.1", "AEMK02000374.1", "AEMK02000676.1", "AEMK02000237.1", "AEMK02000582.1", "AEMK02000155.1", "AEMK02000615.1", "AEMK02000629.1", "AEMK02000531.1", "AEMK02000704.1", "AEMK02000312.1", "AEMK02000567.1", "AEMK02000351.1", "AEMK02000265.1", "AEMK02000681.1", "AEMK02000316.1", "AEMK02000544.1", "AEMK02000491.1", "AEMK02000459.1", "AEMK02000673.1", "AEMK02000356.1", "AEMK02000570.1", "AEMK02000551.1", "AEMK02000473.1", "AEMK02000319.1", "AEMK02000388.1", "AEMK02000628.1", "AEMK02000643.1", "AEMK02000375.1")
 genomeAnnotation <- createGenomeAnnotation(SuscrofaTxdb.11.108.july, standard = FALSE, filter = TRUE, filterChr = excludeChr)
 
@@ -51,11 +50,7 @@ seRNA_7 <- import10xFeatureMatrix(input = "/home/adufour/work/fragencode/workspa
 
 
 seRNAcombined<-cbind(assay(seRNA_1), assay(seRNA_2), assay(seRNA_3), assay(seRNA_4), assay(seRNA_5), assay(seRNA_6), assay(seRNA_7))
-
-seRNA <- SummarizedExperiment(assays = list(counts = seRNAcombined), rowRanges = rowRanges(seRNA_7))
-
-scRNA <- seRNA
-
+scRNA <- SummarizedExperiment(assays = list(counts = seRNAcombined), rowRanges = rowRanges(seRNA_7))
 scRNA@rowRanges@elementMetadata@listData$id <- scRNA@rowRanges@elementMetadata@listData$name
 
 cellsToKeep <- which(getCellNames(archrproj) %in% colnames(scRNA))
@@ -74,8 +69,6 @@ archrproj <- addCellColData(
 # Filtering doublets
 archrproj <- addDoubletScores(archrproj)
 archrproj <- filterDoublets(archrproj)
-
-archrproj
 
 archrproj <- addIterativeLSI(
     ArchRProj = archrproj, 
@@ -139,4 +132,4 @@ p2 <- plotEmbedding(archrproj, name = "Clusters", embedding = "UMAP_RNA", size =
 p3 <- plotEmbedding(archrproj, name = "Clusters", embedding = "UMAP_Combined", size = 2.5, labelAsFactors=F, labelMeans=F)
 p4_a <- plotEmbedding(archrproj, name = "Clusters", embedding = "UMAP_Harmony", size = 2.5, labelAsFactors=F, labelMeans=F)
 
-save.image(file = "/home/adufour/work/rds_storage/omics/archr_all_embryo_solo.RData")
+save.image(file = "/home/adufour/work/rds_storage/omics/archr_all_embryo.RData")

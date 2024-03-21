@@ -4,7 +4,7 @@ library(SuscrofaTxdb.11.108.july)
 
 options(repr.plot.width = 18, repr.plot.height = 17, repr.plot.pointsize = 24)
 
-load(file = "/home/adufour/work/rds_storage/omics/archr_epiblast_v2.RData")
+load(file = "/home/adufour/work/rds_storage/omics/archr_embryo.RData")
 
 addArchRThreads(1)
 addArchRLocking(locking = TRUE)
@@ -22,4 +22,4 @@ archrproj_sub <- addMotifAnnotations(
   logFile = createLogFile("addMotifAnnotations")
 )
 
-save.image(file = "/home/adufour/work/rds_storage/omics/archr_epiblast_v2_motif.RData")
+save.image(file = "/home/adufour/work/rds_storage/omics/archr_embryo.RData")
