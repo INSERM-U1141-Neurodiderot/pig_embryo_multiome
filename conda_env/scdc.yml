@@ -1,0 +1,20 @@
+name: scdc
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - r-scdc
+  - r-irkernel
+  - r-readr
+  - r-seurat
+  - r-tidyr
+  - r-dplyr
+  - r-ggplot2
+  - r-viridis
+  - r-hrbrthemes
+  - r-gprofiler2
+  - ca-certificates
+  - openssl
+  - r-svglite
+prefix: /home/adufour/work/mambaforge-pypy3/envs/scdc

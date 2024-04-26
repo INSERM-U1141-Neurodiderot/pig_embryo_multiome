@@ -1,0 +1,45 @@
+name: scrna
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - r-seurat
+  - r-ggplot2
+  - r-gprofiler2
+  - r-dplyr
+  - r-tidyr
+  - r-tibble
+  - r-harmony
+  - ca-certificates
+  - openssl
+  - r-remotes
+  - r-devtools
+  - r-r.utils
+  - r-irkernel
+  - r-upsetr
+  - r-viridis
+  - r-gghalves
+  - r-magick
+  - r-umap
+  - r-svglite
+  - r-ggfortify
+  - bioconductor-annotationhub
+  - bioconductor-ensembldb
+  - bioconductor-limma
+  - r-clustree
+  - r-readr
+  - r-metap
+  - bioconductor-multtest
+  - bioconductor-scran
+  - bioconductor-rhdf5
+  - bioconductor-complexheatmap
+  - r-pheatmap
+  - bioconductor-celldex
+  - bioconductor-singler
+  - r-xlsx
+  - r-openxlsx
+  - r-rfast2
+  - bioconductor-spotlight
+  - r-scatterpie
+prefix: /home/adufour/work/mambaforge-pypy3/envs/scrna

@@ -1,4 +1,4 @@
-name: archer
+name: bulk_align
 channels:
   - conda-forge
   - bioconda
@@ -7,43 +7,28 @@ dependencies:
   - _libgcc_mutex
   - _openmp_mutex
   - _r-mutex
-  - _sysroot_linux-64_curr_repodata_hack
   - argcomplete
   - binutils_impl_linux-64
   - bioconductor-annotate
   - bioconductor-annotationdbi
   - bioconductor-biobase
   - bioconductor-biocgenerics
-  - bioconductor-biocio
   - bioconductor-biocparallel
   - bioconductor-biostrings
-  - bioconductor-bsgenome
-  - bioconductor-chromvar
-  - bioconductor-cner
   - bioconductor-complexheatmap
   - bioconductor-data-packages
   - bioconductor-delayedarray
-  - bioconductor-dirichletmultinomial
+  - bioconductor-deseq2
+  - bioconductor-genefilter
+  - bioconductor-geneplotter
   - bioconductor-genomeinfodb
   - bioconductor-genomeinfodbdata
-  - bioconductor-genomicalignments
   - bioconductor-genomicranges
-  - bioconductor-go.db
   - bioconductor-iranges
   - bioconductor-keggrest
   - bioconductor-matrixgenerics
-  - bioconductor-motifmatchr
-  - bioconductor-org.ss.eg.db
-  - bioconductor-rhdf5
-  - bioconductor-rhdf5filters
-  - bioconductor-rhdf5lib
-  - bioconductor-rhtslib
-  - bioconductor-rsamtools
-  - bioconductor-rtracklayer
   - bioconductor-s4vectors
-  - bioconductor-seqlogo
   - bioconductor-summarizedexperiment
-  - bioconductor-tfbstools
   - bioconductor-xvector
   - bioconductor-zlibbioc
   - bwidget
@@ -88,8 +73,8 @@ dependencies:
   - libdeflate
   - libedit
   - libev
-  - libexpat
   - libffi
+  - libgcc
   - libgcc-devel_linux-64
   - libgcc-ng
   - libgfortran-ng
@@ -117,7 +102,6 @@ dependencies:
   - libzlib
   - make
   - ncurses
-  - oniguruma
   - openssl
   - pandoc
   - pango
@@ -135,6 +119,7 @@ dependencies:
   - r-base
   - r-base64enc
   - r-bh
+  - r-bibtex
   - r-biocmanager
   - r-bit
   - r-bit64
@@ -144,9 +129,9 @@ dependencies:
   - r-brio
   - r-bslib
   - r-cachem
-  - r-cairo
   - r-callr
   - r-catools
+  - r-checkmate
   - r-circlize
   - r-cli
   - r-clipr
@@ -160,6 +145,7 @@ dependencies:
   - r-crayon
   - r-credentials
   - r-crosstalk
+  - r-crul
   - r-curl
   - r-data.table
   - r-dbi
@@ -172,15 +158,19 @@ dependencies:
   - r-downlit
   - r-dplyr
   - r-dqrng
-  - r-dt
   - r-ellipsis
   - r-evaluate
+  - r-extrafont
+  - r-extrafontdb
   - r-fansi
   - r-farver
   - r-fastmap
   - r-fitdistrplus
   - r-fnn
   - r-fontawesome
+  - r-fontbitstreamvera
+  - r-fontliberation
+  - r-fontquiver
   - r-foreach
   - r-formatr
   - r-fs
@@ -188,9 +178,12 @@ dependencies:
   - r-futile.options
   - r-future
   - r-future.apply
+  - r-gdtools
   - r-generics
   - r-gert
   - r-getoptlong
+  - r-gfonts
+  - r-ggfortify
   - r-ggplot2
   - r-ggrepel
   - r-ggridges
@@ -208,11 +201,12 @@ dependencies:
   - r-hexbin
   - r-highr
   - r-hms
+  - r-hrbrthemes
   - r-htmltools
   - r-htmlwidgets
+  - r-httpcode
   - r-httpuv
   - r-httr
-  - r-httr2
   - r-ica
   - r-igraph
   - r-ini
@@ -234,6 +228,7 @@ dependencies:
   - r-lifecycle
   - r-listenv
   - r-lmtest
+  - r-locfit
   - r-lsei
   - r-magrittr
   - r-mass
@@ -244,7 +239,6 @@ dependencies:
   - r-mime
   - r-miniui
   - r-munsell
-  - r-nabor
   - r-nlme
   - r-npsurv
   - r-openssl
@@ -257,13 +251,12 @@ dependencies:
   - r-pkgconfig
   - r-pkgdown
   - r-pkgload
+  - r-pkgmaker
   - r-plogr
   - r-plotly
   - r-plyr
   - r-png
   - r-polyclip
-  - r-powerlaw
-  - r-pracma
   - r-praise
   - r-prettyunits
   - r-processx
@@ -273,9 +266,6 @@ dependencies:
   - r-promises
   - r-ps
   - r-purrr
-  - r-r.methodss3
-  - r-r.oo
-  - r-r.utils
   - r-r6
   - r-ragg
   - r-rann
@@ -291,11 +281,11 @@ dependencies:
   - r-rcpptoml
   - r-rcurl
   - r-readr
+  - r-registry
   - r-rematch2
   - r-remotes
   - r-repr
   - r-reshape2
-  - r-restfulr
   - r-reticulate
   - r-rgeos
   - r-rjson
@@ -303,12 +293,12 @@ dependencies:
   - r-rmarkdown
   - r-rocr
   - r-roxygen2
-  - r-rpart
   - r-rprojroot
   - r-rspectra
   - r-rsqlite
   - r-rstudioapi
   - r-rtsne
+  - r-rttf2pt1
   - r-rversions
   - r-sass
   - r-scales
@@ -323,13 +313,9 @@ dependencies:
   - r-snow
   - r-sourcetools
   - r-sp
-  - r-spatstat
-  - r-spatstat.core
   - r-spatstat.data
   - r-spatstat.explore
   - r-spatstat.geom
-  - r-spatstat.linnet
-  - r-spatstat.model
   - r-spatstat.random
   - r-spatstat.sparse
   - r-spatstat.utils
@@ -341,18 +327,20 @@ dependencies:
   - r-tensor
   - r-testthat
   - r-textshaping
-  - r-tfmpvalue
   - r-tibble
   - r-tidyr
   - r-tidyselect
   - r-tinytex
+  - r-triebeard
   - r-tzdb
   - r-urlchecker
+  - r-urltools
   - r-usethis
   - r-utf8
   - r-uuid
   - r-uwot
   - r-vctrs
+  - r-viridis
   - r-viridislite
   - r-vroom
   - r-waldo
@@ -373,10 +361,10 @@ dependencies:
   - tk
   - tktable
   - toml
-  - tomlkit
-  - typing
+  - typing_extensions
   - tzdata
   - wheel
+  - xbioc
   - xmltodict
   - xorg-kbproto
   - xorg-libice
@@ -397,30 +385,6 @@ dependencies:
   - zipp
   - zlib
   - zstd
-  - bioconductor-sparsematrixstats
-  - r-svglite
   - r-readxl
-  - r-viridis
-  - r-gprofiler2
-  - bioconductor-genomicfeatures
-  - bioconductor-repitools
-  - r-magick
-  - bioconductor-topgo
-  - r-ggthemes
-  - bioconductor-singlecellexperiment
-  - r-readods
-  - r-rcppalgos
-  - r-ggrastr
-  - bioconductor-memes
-  - bioconductor-universalmotif
-  - r-prroc
-  - bioconductor-aucell
-  - r-nmf
-  - bioconductor-annotationhub
-  - bioconductor-ensembldb
-  - r-harmony
-  - r-tidyverse
-  - r-upsetr
-  - r-xlsx
-  - r-openxlsx
-prefix: /home/adufour/work/mambaforge-pypy3/envs/archer
+  - r-svglite
+prefix: /home/adufour/work/mambaforge-pypy3/envs/bulk_align

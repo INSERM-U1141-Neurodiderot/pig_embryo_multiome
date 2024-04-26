@@ -1,0 +1,23 @@
+name: liana
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - r-seurat
+  - r-dplyr
+  - r-tibble
+  - r-gprofiler2
+  - r-tidyverse
+  - r-remotes
+  - r-biocmanager
+  - ca-certificates
+  - openssl
+  - r-irkernel
+  - r-devtools
+  - r-ggpubr
+  - r-ggrepel
+  - r-cowplot
+  - r-svglite
+  - r-entropy
+prefix: /home/adufour/work/mambaforge-pypy3/envs/liana
