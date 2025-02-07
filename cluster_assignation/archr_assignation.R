@@ -8,13 +8,15 @@ library(RColorBrewer)
 library(viridis)
 library(gprofiler2)
 
-load(file = "/home/adufour/work/rds_storage/omics/archr_all_v6.RData")
+load(file = "/home/adufour/work/rds_storage/omics/archr_all_v7_stemcells.RData")
 
-reference <- readRDS("/home/adufour/work/rds_storage/gastrulation/embryo_E5_E15_arc108.rds")
+archrproj <- archrproj_sub
+
+reference <- readRDS("/home/adufour/work/rds_storage/gastrulation/embryo_E11_E15.rds")
 
 # add gene integration matrix
 archrproj2 <- addGeneIntegrationMatrix(
-    ArchRProj       = archrproj_sub, 
+    ArchRProj       = archrproj, 
     useMatrix       = "GeneExpressionMatrix",
     matrixName      = "GeneIntegrationMatrix",
     reducedDims     = "Harmony",
@@ -36,4 +38,4 @@ archrproj2 <- addGeneIntegrationMatrix(
     n.trees         = 800
 )
 
-save.image("/home/adufour/work/rds_storage/omics/assignation_v2.RData")
+save.image("/home/adufour/work/rds_storage/omics/assignation_stemcells_arc108.RData")
