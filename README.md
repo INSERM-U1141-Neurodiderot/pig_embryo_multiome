@@ -17,7 +17,7 @@ The repository is structured as follows:
 - Environnment used in [conda](virtualEnvs)
 
 ## Data
-- All raw sequencing data and associated metadata are available in FAANG under accession number ...
+- All raw sequencing data and associated metadata are available in FAANG under accession number PRJEB81663
 
 ## Questions
 For questions contact "herve.acloque@inrae.fr"
