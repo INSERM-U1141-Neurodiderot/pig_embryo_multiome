@@ -22,4 +22,11 @@ archrproj_sub <- addMotifAnnotations(
   logFile = createLogFile("addMotifAnnotations")
 )
 
+archrproj_sub <- addBgdPeaks(archrproj_sub)
+
+archrproj_sub <- addDeviationsMatrix(
+  ArchRProj = archrproj_sub, 
+  peakAnnotation = "Motif"
+)
+
 save.image(file = "/home/adufour/work/rds_storage/omics/archr_embryo.RData")
